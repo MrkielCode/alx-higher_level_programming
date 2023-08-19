@@ -1,64 +1,63 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "lists.h"
 
-listint_t *reverse_my_listint(listint_t **head);
-int is_palindrome(listint_t **head);
-
-/**
- * reverse_my_list - To reverses a linked list
- * @head: head pointer
- * Return: prev
- */
-
-listint_t *reverse_my_list(listint_t *head)
+listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *pv = NULL, *cr = head, *next = NULL;
+	listint_t *prev = NULL, *current = *head, *next = NULL;
 
-	while (cr != NULL)
+	while (current != NULL)
 	{
-		next = cr->next;
-		cr->next = pv;
-		pv = cr;
-		cr = next;
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
 	}
-	return (pv);
+
+	*head = prev;
+	return (*head);
 }
 
-/**
- * is_palindrome - Checks list is palindrone
- * @head: head
- * Return: 0 or 1
- */
 int is_palindrome(listint_t **head)
 {
+	listint_t *sl = *head, *ft = *head;
+	listint_t *prev_sl = NULL, *mid = NULL;
+	listint_t *second_half, *temp;
 	int is_palindrome = 1;
-	listint_t *sl = *head;
-	listint_t *ft = *head;
-	listint_t *half2 = reverse_my_list(sl->next);
-	listint_t *half1 = *head;
-	listint_t *half2_copy = half2;
 
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
-
-
-	while (ft->next != NULL && ft->next->next != NULL)
+	while (ft != NULL && ft->next != NULL)
 	{
-		sl = sl->next;
 		ft = ft->next->next;
+		prev_sl = sl;
+		sl = sl->next;
 	}
-
-	while (half2_copy != NULL)
+	if (ft != NULL)
 	{
-		if (half1->n != half2_copy->n)
+		mid = sl;
+		sl = sl->next;
+	}
+	second_half = sl;
+	prev_sl->next = NULL;
+	reverse_listint(&second_half);
+	temp = *head;
+	while (second_half != NULL)
+	{
+		if (temp->n != second_half->n)
 		{
 			is_palindrome = 0;
 			break;
 		}
-		half1 = half1->next;
-		half2_copy = half2_copy->next;
+		temp = temp->next;
+		second_half = second_half->next;
 	}
-	sl->next = reverse_my_list(half2);
+	reverse_listint(&sl);
+	if (mid != NULL)
+	{
+		prev_sl->next = mid;
+		mid->next = sl;
+	} else
+		prev_sl->next = sl;
 	return (is_palindrome);
 }
