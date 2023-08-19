@@ -32,21 +32,21 @@ listint_t *reverse_my_list(listint_t *head)
  */
 int is_palindrome(listint_t **head)
 {
+	listint_t *sl = *head;
+	listint_t *ft = *head;
+	listint_t *half2 = reverse_my_list(sl->next);
+	listint_t *half1 = *head;
+	 listint_t *half2_copy = half2;
+
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 
-	listint_t *sl = *head;
-	listint_t *ft = *head;
 
 	while (ft->next != NULL && ft->next->next != NULL)
 	{
 		sl = sl->next;
 		ft = ft->next->next;
 	}
-
-	listint_t *half2 = reverse_my_list(sl->next);
-	listint_t *half1 = *head;
-	listint_t *half2_copy = half2;
 
 	int is_palindrome = 1;
 
