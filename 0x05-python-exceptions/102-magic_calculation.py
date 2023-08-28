@@ -11,4 +11,4 @@ def magic_calculation(a, b):
         except:
             result = result + (a + b)
 
-        return result
+    return result
