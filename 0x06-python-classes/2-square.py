@@ -1,4 +1,4 @@
-#!/urs/bin/python3
+#!/usr/bin/python3
 
 """ This script that perform an exception on sqaure Method """
 
