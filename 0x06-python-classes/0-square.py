@@ -1,6 +1,16 @@
 #!/usr/bin/python3
-""" Defining an empty class to run some test """
+
+"""
+This script has a class named Sqaure but it does
+nothing just for testing purposes
+
+"""
+
 
 class Square:
-    """ the class does nothing, so it is an empty class """
+
+    """
+    This square does not contain any method or attribute.
+    it is just an empty class.
+    """
     pass
