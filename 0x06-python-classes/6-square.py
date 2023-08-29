@@ -35,11 +35,10 @@ class Square:
 
         """ setter of size of sqaure """
 
-        if type(value) is int:
-            if (value < 0):
-                raise ValueError("size must be >= 0")
-        else:
+        if type(value) is not int:
             raise TypeError("size must be an integer")
+        if (value < 0):
+            raise Value('size must be an integer')
 
         self.__size = value
 
