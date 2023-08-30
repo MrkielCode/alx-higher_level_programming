@@ -28,7 +28,7 @@ class Square:
 
         """ getter of size  of square"""
 
-        return self.__size
+        return (self.__size)
 
     @size.setter
     def size(self, value):
@@ -47,7 +47,7 @@ class Square:
 
         """ getter of sqaure position """
 
-        return self.__position
+        return (self.__position)
 
     @position.setter
     def position(self, value):
@@ -65,18 +65,24 @@ class Square:
 
         """ get the area of square """
 
-        return self.__size * self.__size
+        return (self.__size * self.__size)
 
     def my_print(self):
 
         """ print the sqaure visualization """
 
         if self.__size == 0:
-            print()
+            print("")
             return
-
+        """
         for _ in range(self.__position[1]):
-            print()
+            print("")
         for _ in range(self.__size):
             print(" " * self.__position[0], end="")
             print("#" * self.__size)
+        """
+        [print("") for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
+            print("")
