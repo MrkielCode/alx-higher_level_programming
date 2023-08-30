@@ -10,20 +10,14 @@ def list_division(my_list_1, my_list_2, list_length):
 
         except(ValueError, TypeError):
             print("wrong type")
-
             sumList = 0
 
         except ZeroDivisionError:
             print("division by 0")
-
             sumList = 0
-
         except IndexError:
             print("out of range")
-
             sumList = 0
-
         finally:
             new_list.append(sumList)
-
     return (new_list)
