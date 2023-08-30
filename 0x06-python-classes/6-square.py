@@ -18,7 +18,11 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
 
-        """ initialization of size and position"""
+        """ initialization of size and position
+        Args:
+            size(int): size of int
+            position: size of cordination positon
+        """
 
         self.size = size
         self.position = position
@@ -37,7 +41,7 @@ class Square:
 
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if (value < 0):
+        elif value < 0:
             raise ValueError("size must be >= 0")
 
         self.__size = value
