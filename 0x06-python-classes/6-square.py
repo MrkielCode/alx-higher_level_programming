@@ -1,8 +1,31 @@
 #!/usr/bin/python3
+""" defining class square """
+
+
 class Square:
+
+    """
+    A class that represent Sqaure
+
+    Attributes:
+        size (int): The size  of the sqaure
+        position (tuples): The co-ordinate of the sqaure
+
+        Methods:
+        area(): Calculate the area of the sqaure
+        my_print(): To print patterns
+    """
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
-        self.__position = position
+
+        """
+        Initializing a square
+
+        Args:
+            size (int): The size  of the sqaure
+            position (tuples): The co-ordinate of the sqaure
+        """
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
