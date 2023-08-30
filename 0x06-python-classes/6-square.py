@@ -7,17 +7,10 @@ class Square:
 
     """ This class represent a sqaure with a give size"""
 
-    def __init__(self, size=0):
-
-        """
-        initialize the size of the square
-        """
-        self.size = size
-
     def __init__(self, size=0, position=(0, 0)):
         """Initialize a new square cordinate."""
-        self.size = size
-        self.position = position
+        self.__size = size
+        self.__position = position
 
     def area(self):
         """
