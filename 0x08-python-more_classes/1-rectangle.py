@@ -16,6 +16,7 @@ class Rectangle:
     """
 
     def __init__(self, width=0, height=0):
+
         """
         initialize a Rectangle objects
 
@@ -45,10 +46,10 @@ class Rectangle:
         Args:
             values(int): the value to be set to the width
         """
-        if type(value) is not int:
+        if not isinstance(value, int)
             raise TypeError("width must be an integer")
         if value < 0:
-            raise TypeError("width must be >= 0")
+            raise ValueError("width must be >= 0")
         self.__width = value
 
     @property
@@ -68,8 +69,8 @@ class Rectangle:
         Args:
             value(int): value to be set to height
         """
-        if type(value) is not int:
+        if not isinstance(value, int)
             raise TypeError("height must be an integer")
         if value < 0:
-            raise TypeError("height must be >= 0")
+            raise ValueError("height must be >= 0")
         self.__height = value
