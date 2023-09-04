@@ -4,6 +4,7 @@ This is class represent an empty
 class
 """
 
+
 class Rectangle:
     """
     this is an empty class with
