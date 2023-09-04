@@ -15,9 +15,7 @@ class Rectangle:
         height(int): the height ofthe rectangle
     """
 
-
     def __init__(self, width=0, height=0):
-
         """
         initialize a Rectangle objects
 
@@ -111,4 +109,3 @@ class Rectangle:
     def __del__(self):
         """ To delete an instance """
         print("Bye rectangle...")
-        
