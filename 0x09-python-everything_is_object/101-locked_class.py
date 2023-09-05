@@ -6,7 +6,7 @@ defining a class
 
 class LockedClass:
 
-    """ 
+    """
     class to check instance of Lockedclass
 
     """
