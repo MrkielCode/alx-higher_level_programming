@@ -1,0 +1,58 @@
+# 3-say_my_name.txt
+
+This module handle two arguments and check if
+both are string and print at the outtput
+
+first import from 3-say_my_name.txt
+-----------------------------------
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Testing for if Parameters are strings
+-------------------------------------
+
+    >>> say_my_name("Dike", "Ikechukwu")
+    My name is Dike Ikechukwu
+
+Testing if each parameter has a double strings
+----------------------------------------------
+
+    >>> say_my_name("Prince Dike", "Ikechukwu kiel")
+    My name is Prince Dike Ikechukwu kiel
+
+Testing for a single parameters
+-------------------------------
+
+    >>> say_my_name("John")
+    My name is John 
+
+Testing for invalid names
+-------------------------
+
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+    >>> say_my_name("Dike", 2)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name(2, "Dike")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name({"Dike", "Ike"}, 5)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Dike", "price", "ike")
+    Traceback (most recent call last):
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+    >>> say_my_name(["ike", "emeka"], 3)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string

@@ -1,0 +1,106 @@
+# 2-matrix_divided.txt
+
+This modules handles matrix calculations and returns
+two argumensts
+
+---------------------------------------
+first import of matrix_divide
+--------------------------------------
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+------------------------------------
+How to use matrix_divide modules
+------------------------------------
+
+Testing the function using integer values
+-----------------------------------------
+
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Testing if matrix are proper rounded
+------------------------------------
+
+    >>> matrix =  [[3, 18, 6], [9, 12, 15]]
+    >>> print(matrix_divided(matrix, 3))
+    [[1.0, 6.0, 2.0], [3.0, 4.0, 5.0]]
+
+Testing matrix using negative values
+--------------------------------------
+
+    >>> matrix = [[-3, -18, -6], [-9, -12, -15]]
+    >>> print(matrix_divided(matrix, 3))
+    [[-1.0, -6.0, -2.0], [-3.0, -4.0, -5.0]]
+
+Testing matrix with negative and postive floats
+-----------------------------------------------
+
+    >>> matrix = [[1, -2.7, 6.4, 4.5, 8], [-9.4, 7.00, 8, 8.888, 10]]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.33, -0.9, 2.13, 1.5, 2.67], [-3.13, 2.33, 2.67, 2.96, 3.33]]
+
+Testing for same length and dividing by float
+----------------------------------------------
+
+    >>> matrix = [[2, 4], [3, 1], [9, 3], [0, 33]]
+    >>> print(matrix_divided(matrix, 4.2))
+    [[0.48, 0.95], [0.71, 0.24], [2.14, 0.71], [0.0, 7.86]]
+
+Testing is matrix is divide by negative number
+----------------------------------------------
+
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> print(matrix_divided(matrix, -3))
+    [[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
+
+Testing when 2 arguments is none
+---------------------------------
+
+    >>> matrix_divided(None, None)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Testing when divisor is none
+----------------------------
+
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, None)
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+Testing when matrix contains string
+-----------------------------------
+    >>> matrix = [[1, 2, 'a'], [4, 5, 6]]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Testing when matrix is divide by string
+---------------------------------------
+
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, "a")
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+Testing when matrix is divide by zero
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+Testing when matix is has different length
+------------------------------------------
+
+    >>> matrix = [[2, 3], [3, 4, 5], [1]]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+Testin when arguments contians a dictionary
+-------------------------------------------
+
+    >>> matrix_divided({2, 3, 4}, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
