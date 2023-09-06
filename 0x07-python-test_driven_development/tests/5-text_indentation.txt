@@ -1,0 +1,61 @@
+# 5-text_indentation.py 
+
+This modules  prints strings passed into it
+and indent it when is encountered
+
+Module Usage
+--------------------------------
+
+importing text_indentation module
+---------------------------------
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("Testing?")
+    Testing?
+    <BLANKLINE>
+
+    >>> text_indentation("let test. all the? symbol: here")
+    let test.
+    <BLANKLINE>
+    all the?
+    <BLANKLINE>
+    symbol:
+    <BLANKLINE>
+    here
+
+checking is there is space in the text
+--------------------------------------
+
+    >>> text_indentation("    Hello World.")
+    Hello World.
+    <BLANKLINE>
+
+    >>> text_indentation("Hello World:    ")
+    Hello World:
+    <BLANKLINE>
+
+    >>> text_indentation("my first program in python?")
+    my first program in python?
+    <BLANKLINE>
+
+chacking if there is new line
+------------------------------
+    >>> text_indentation("\n\n Here we go.")
+    Here we go.
+    <BLANKLINE>
+
+    >>> text_indentation("let run some more.\ntest")
+    let run some more.
+    <BLANKLINE>
+    test
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(10)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(["is", "my", "way"])
+    Traceback (most recent call last):
+    TypeError: text must be a string
