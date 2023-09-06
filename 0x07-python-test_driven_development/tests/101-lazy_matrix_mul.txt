@@ -101,4 +101,15 @@ Testing for invalid matrix
    Traceback (most recent call last):
    TypeError: Object arrays are not currently supported
 
- 
+   >>> m_a = [
+   ... [2, 2],
+   ... [6, 4, 5]
+   ... ]
+   >>> m_b = [
+   ... [1, 2],
+   ... [8, 4]
+   ... ]
+   >>> print(lazy_matrix_mul(m_a, m_b))
+   Traceback (most recent call last):
+   ValueError: setting an array element with a sequence.
+
