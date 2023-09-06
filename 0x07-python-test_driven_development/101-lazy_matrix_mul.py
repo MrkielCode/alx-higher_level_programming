@@ -11,7 +11,6 @@ def lazy_matrix_mul(m_a, m_b):
 
     Args:
         m_a (list of lists of ints/floats): The matrix to be multiply
-        m_b (list of lists of ints/floats): The matrix to be multiply 
+        m_b (list of lists of ints/floats): The matrix to be multiply
     """
-
     return (np.matmul(m_a, m_b))
