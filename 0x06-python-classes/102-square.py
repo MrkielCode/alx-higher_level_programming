@@ -41,20 +41,20 @@ class Square:
         else:
             raise TypeError("size must be an integer")
 
-    def __eq__(self, other):
-        return self.area() == other.area()
-
-    def __ne__(self, other):
-        return self.area != other.area()
-
-    def __gt__(self, other):
-        return self.area() > other.area()
-
-    def __ge__(self, other):
-        return self.area() >= other.area()
-
     def __lt__(self, other):
-        return self.area() < other.area()
+        return self.size < other.size
 
     def __le__(self, other):
-        return self.area() <= other.area()
+        return self.size <= other.size
+
+    def __eq__(self, other):
+        return self.size == other.size
+
+    def __ne__(self, other):
+        return self.size != other.size
+
+    def __ge__(self, other):
+        return self.size >= other.size
+
+    def __gt__(self, other):
+        return self.size > other.size
