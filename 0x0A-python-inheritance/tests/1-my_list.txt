@@ -22,3 +22,7 @@ Testing for normal output
     >>> my_list = MyList()
     >>> my_list.print_sorted()
     []
+
+    >>> print_sorted()
+    Traceback (most recent call last):
+    NameError: name 'print_sorted' is not defined
