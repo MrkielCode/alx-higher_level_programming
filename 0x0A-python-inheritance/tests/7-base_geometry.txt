@@ -70,4 +70,4 @@ Runing Test for invalid inputs
     >>> bg.integer_validator("", True)
     Traceback (most recent call last):
     ...
-    ValueError: string should not be empty
+    TypeError:  must be an integer
