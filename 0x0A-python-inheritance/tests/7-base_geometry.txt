@@ -1,4 +1,4 @@
-7-base_geometry.py
+#7-base_geometry
 -----------------------------
 
 Importing the class modulee
