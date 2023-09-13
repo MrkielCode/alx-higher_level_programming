@@ -46,4 +46,29 @@ Runing Test for invalid inputs
     Traceback (most recent call last):
     ...
     TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+    >>> bg.integer_validator("integer", 3, 4)
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+    >>> bg.integer_validator("integer", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: integer must be an integer
+
+    >>> bg.integer_validator("integer", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: integer must be an integer
+
+    >>> bg.integer_validator(None, 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: Position 1 argument should be a string
+
+    >>> bg.integer_validator("", True)
+    Traceback (most recent call last):
+    ...
+    TypeError:  must be an integer
    
