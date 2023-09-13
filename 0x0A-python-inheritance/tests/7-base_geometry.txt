@@ -45,29 +45,29 @@ passing two string parameters
 ------------------------------
 
     >>> bg = BaseGeometry()
-    >>> bg.integer_validator("name", "name")
+    >>> bg.integer_validator("string", "name")
     Traceback (most recent call last):
-    TypeError: name must be an integer
+    TypeError: string must be an integer
 
 passing a negative float number and postive float
 --------------------------------------------------
 
     >>> bg = BaseGeometry()
-    >>> bg = bg.integer_validator("name", -6)
+    >>> bg = bg.integer_validator("integer", -6)
     Traceback (most recent call last):
-    ValueError: name must be greater than 0
+    ValueError: integer must be greater than 0
 
     >>> bg = BaseGeometry()
-    >>> bg = bg.integer_validator("name", 5.5)
+    >>> bg = bg.integer_validator("float", 5.5)
     Traceback (most recent call last):
-    TypeError: name must be an integer
+    TypeError: float must be an integer
 
 passing zero on the parameter
 -----------------------------
     >>> bg = BaseGeometry()
-    >>> bg = bg.integer_validator("name", 0)
+    >>> bg = bg.integer_validator("integer", 0)
     Traceback (most recent call last):
-    ValueError: name must be greater than 0
+    ValueError: integer must be greater than 0
 
 passing None on the parameter
 ----------------------------=
@@ -79,21 +79,21 @@ passing None on the parameter
 passing boalean on the parameter
 ---------------------------------
     >>> bg = BaseGeometry()
-    >>> bg = bg.integer_validator("Name", True)
+    >>> bg = bg.integer_validator("bool", True)
     Traceback (most recent call last):
-    TypeError: Name must be an integer
+    TypeError: bool must be an integer
  
 passing a list on parameter
 ----------------------------
     >>> bg = BaseGeometry()
-    >>> bg = bg.integer_validator("Name", [3])
+    >>> bg = bg.integer_validator("list", [3, 2, 1])
     Traceback (most recent call last):
-    TypeError: Name must be an integer
+    TypeError: list must be an integer
 
 passing dict on parameter
 -------------------------
     >>> bg = BaseGeometry()
-    >>> bg = bg.integer_validator("Name", {3})
+    >>> bg = bg.integer_validator("dict", {"key": "value"})
     Traceback (most recent call last):
-    TypeError: Name must be an integer
+    TypeError: dict must be an integer
     
