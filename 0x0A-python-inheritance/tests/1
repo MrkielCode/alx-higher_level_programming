@@ -1,8 +1,8 @@
-#7-base_geometry
+7-base_geometry.py
 -----------------------------
 
 Importing the class modulee
-        >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+        >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 Intializing base class
 	>>> base = BaseGeometry()
@@ -31,7 +31,7 @@ Testing when integer is zero
          ValueError: integer must be greater than 0
 
 testing when integer less zero
-	 >>> base.integer_validator("integer", -7)
+	 >>> base.integer_validator("integer", -5)
 	 Traceback (most recent call last):
          ...
          ValueError: integer must be greater than 0
@@ -102,10 +102,10 @@ Checking for only 1 argument to integer_validator:
 	 >>> base.integer_validator("integer")
 	 Traceback (most recent call last):
          ...
-	 TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+	 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
 Checking for too many arguments:
 	 >>> base.integer_validator("integer", 1, 2)
 	 Traceback (most recent call last):
          ...
-	 TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
+	 TypeError: integer_validator() takes 3 positional arguments but 4 were given
