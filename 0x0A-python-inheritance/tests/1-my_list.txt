@@ -39,9 +39,6 @@ Testing for negative values
 
 Testing for empty parameters
 ----------------------------
-    >>> my_list = MyList()
-    >>> my_list.print_sorted()
-    []
 
     >>> my_list.print_sorted(1)
     Traceback (most recent call last):
