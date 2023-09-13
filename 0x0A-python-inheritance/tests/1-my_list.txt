@@ -6,7 +6,7 @@ class list
 importing the list class module
 -------------------------------
 
->>> MyList = __import__('1-my_list').MyList
+>>> MyLis = __import__('1-my_list').MyList
 
 instantiate my list
     >>> my_list = MyList()
