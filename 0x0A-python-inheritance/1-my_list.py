@@ -6,9 +6,10 @@ This class inherit list from inbulit class
 
 
 class MyList(list):
+
     """
-    class to inherit list
-    class
+     This class to inherit list class
+
     """
 
     def print_sorted(self):
