@@ -52,3 +52,8 @@ Runing Test for invalid inputs
     ...
     TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
+    >>> bg.integer_validator("None", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: None must be an integer
+   
