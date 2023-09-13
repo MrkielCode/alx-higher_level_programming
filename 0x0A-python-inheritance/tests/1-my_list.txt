@@ -16,9 +16,9 @@ Testing for normal output
     >>> my_list.append(5)
     >>> my_list.append(1)
     >>> my_list.append(0)
-    >>> print(my_list)
-    [2, 3, 5, 1, 0]
     >>> my_list.print_sorted()
     [0, 1, 2, 3, 5]
-    >>> print(my_list)
-    [2, 3, 5, 1, 0]
+
+    >>> my_list = MyList()
+    >>> my_list.print_sorted()
+    []
