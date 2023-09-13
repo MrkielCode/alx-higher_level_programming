@@ -38,3 +38,23 @@ ValueError: name must be greater than 0
 >>> bg = bg.integer_validator("name", 5.5)
 Traceback (most recent call last):
 TypeError: name must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg = bg.integer_validator("name", 0)
+Traceback (most recent call last):
+ValueError: name must be greater than 0
+
+>>> bg = BaseGeometry()
+>>> bg = bg.integer_validator(None)
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+>>> bg = BaseGeometry()
+>>> bg = bg.integer_validator("Name", True)
+Traceback (most recent call last):
+TypeError: Name must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg = bg.integer_validator("Name", [3])
+Traceback (most recent call last):
+TypeError: Name must be an integer
