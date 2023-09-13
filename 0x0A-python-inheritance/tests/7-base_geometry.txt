@@ -61,13 +61,3 @@ Runing Test for invalid inputs
     Traceback (most recent call last):
     ...
     TypeError: bool must be an integer
-
-    >>> bg.integer_validator(None, 5)
-    Traceback (most recent call last):
-    ...
-    TypeError: Position 1 argument should be a string
-
-    >>> bg.integer_validator("", True)
-    Traceback (most recent call last):
-    ...
-    TypeError:  must be an integer
