@@ -9,6 +9,9 @@ class TestBase(unittest.TestCase):
     """
     Test cases for Base case
     """
+    def setUp(self):
+        Base._Base__nb_objects = 0
+
     def test_default_id(self):
         """ Testing for default id """
         b1 = Base()
@@ -28,10 +31,36 @@ class TestBase(unittest.TestCase):
         b5 = Base()
         b6 = Base(30)
         b7 = Base()
-        self.assertEqual(b5.id, 4)
+        self.assertEqual(b5.id, 1)
         self.assertEqual(b6.id, 30)
-        self.assertEqual(b7.id, 5)
+        self.assertEqual(b7.id, 2)
+
+    def test_for_empty_json(self):
+        """ testing when an empty string is pass """
+        result = Base.to_json_string([])
+        self.assertEqual(result, "[]")
+
+    def test_for_none_json(self):
+        """ testing for none json """
+        result = Base.to_json_string(None)
+        self.assertEqual(result, "[]")
+
+    def test_for_json_string_single_dict(self):
+        """ testing for passing dict """
+        dict_1 = {'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}
+        result = Base.to_json_string([dict_1])
+        expected = '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]'
+        self.assertEqual(result, expected)
+
+    def test_for_json_string_multi_dicts(self):
+        """ testing for multiple dictionary """
+        dict_1 = {'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}
+        dict_2 = {'x': 1, 'width': 5, 'id': 2, 'height': 3, 'y': 4}
+        result = Base.to_json_string([dict_1, dict_2])
+        output = '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}, '\
+            '{"x": 1, "width": 5, "id": 2, "height": 3, "y": 4}]'
+        self.assertEqual(result, output)
 
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main

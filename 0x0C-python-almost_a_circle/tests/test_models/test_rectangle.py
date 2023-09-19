@@ -3,12 +3,16 @@ Testing the Rectangle Class For Error
 """
 
 import unittest
+from models.base import Base
 from models.rectangle import Rectangle
 from io import StringIO
 import sys
 
 
 class TestRectangle(unittest.TestCase):
+
+    def setUp(self):
+        Base._Base__nb_objects = 0
 
     def test_for_constructor(self):
         "Tests for constructors and inheritance from Base"
@@ -112,13 +116,13 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(r1), expected_output)
 
         r2 = Rectangle(3, 4, 1)
-        expected_output = "[Rectangle] (24) 1/0 - 3/4"
+        expected_output = "[Rectangle] (1) 1/0 - 3/4"
         self.assertEqual(str(r2), expected_output)
 
     def test_for_update(self):
         """ Testing for update method """
         r1 = Rectangle(10, 10, 10, 10)
-        expected_output = "[Rectangle] (25) 10/10 - 10/10"
+        expected_output = "[Rectangle] (1) 10/10 - 10/10"
         self.assertEqual(str(r1), expected_output)
 
         r1.update(89)
@@ -140,6 +144,37 @@ class TestRectangle(unittest.TestCase):
         r1.update(89, 2, 3, 4, 5)
         expected_output = "[Rectangle] (89) 4/5 - 2/3"
         self.assertEqual(str(r1), expected_output)
+
+        r2 = Rectangle(10, 10, 10, 10)
+        expected_output = "[Rectangle] (2) 10/10 - 10/10"
+        self.assertEqual(str(r2), expected_output)
+
+        r2.update(height=1)
+        expected_output = "[Rectangle] (2) 10/10 - 10/1"
+        self.assertEqual(str(r2), expected_output)
+
+        r2.update(width=1, x=2)
+        expected_output = "[Rectangle] (2) 2/10 - 1/1"
+        self.assertEqual(str(r2), expected_output)
+
+        r2.update(y=1, width=2, x=3, id=89)
+        expected_output = "[Rectangle] (89) 3/1 - 2/1"
+        self.assertEqual(str(r2), expected_output)
+
+        r2.update(x=1, height=2, y=3, width=4)
+        expected_output = "[Rectangle] (89) 1/3 - 4/2"
+        self.assertEqual(str(r2), expected_output)
+
+    def test_for_dictionary(self):
+        r1 = Rectangle(10, 2, 1, 9)
+        expected_output = {
+                'x': 1,
+                'y': 9,
+                'id': 1,
+                'height': 2,
+                'width': 10
+                }
+        self.assertEqual(r1.to_dictionary(), expected_output)
 
 
 if __name__ == "__main__":
