@@ -2,7 +2,10 @@
 This is a unit test for base class
 """
 import unittest
+import os
 from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
 
 
 class TestBase(unittest.TestCase):
@@ -60,6 +63,32 @@ class TestBase(unittest.TestCase):
         output = '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}, '\
             '{"x": 1, "width": 5, "id": 2, "height": 3, "y": 4}]'
         self.assertEqual(result, output)
+
+    @classmethod
+    def setUpClass(cls):
+        """ Creating a temporary testing file """
+
+        cls.rectangles = [Rectangle(8, 3), Rectangle(4, 2)]
+        cls.squares = [Square(5), Square(3)]
+        cls.rectangles_filename = "Rectangle.json"
+        cls.squares_filename = "Square.json"
+
+    @classmethod
+    def tearDownClass(cls):
+        """ Removing temp file after testing """
+        for filename in [cls.rectangles_filename, cls.squares_filename]:
+            if os.path.exists(filename):
+                os.remove(filename)
+
+    def test_for_save_rect_file(self):
+        """ Testing to save file """
+        Rectangle.save_to_file(self.rectangles)
+        self.assertTrue(os.path.exists(self.rectangles_filename))
+
+    def test_for_save_rect_file(self):
+        """ Testing for save file """
+        Square.save_to_file(self.squares)
+        self.assertTrue(os.path.exists(self.squares_filename))
 
 
 if __name__ == "__main__":
