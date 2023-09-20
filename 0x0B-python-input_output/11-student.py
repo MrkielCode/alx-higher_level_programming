@@ -4,9 +4,6 @@ This has list of public attributes that return as
 json
 """
 
-import json
-
-
 class Student:
     """
     method:
@@ -27,9 +24,6 @@ class Student:
                     attr_dict[attr] = getattr(self, attr)
             return attr_dict
 
-    def to_json(self, attrs=None):
-        try:
-            for key, value in json.items():
-                setattr(self, key, value)
-        except FileNotFoundError:
-            pass
+    def reload_from_json(self, json):
+        for key, value in json.items():
+            setattr(self, key, value)
