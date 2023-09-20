@@ -90,6 +90,17 @@ class TestBase(unittest.TestCase):
         Square.save_to_file(self.squares)
         self.assertTrue(os.path.exists(self.squares_filename))
 
+    def test_for_fle_empty_list(self):
+        """ testing for empty save file """
+        empty_list = []
+        Base.save_to_file(empty_list)
+        self.assertTrue(os.path.exists(Base.__name__ + ".json"))
+
+    def test_for_none_list(self):
+        """ testing for None file """
+        Base.save_to_file(None)
+        self.assertTrue(os.path.exists(Base.__name__ + ".json"))
+
 
 if __name__ == "__main__":
     unittest.main
