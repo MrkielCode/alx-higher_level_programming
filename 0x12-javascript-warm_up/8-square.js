@@ -8,10 +8,11 @@ let i, j;
 
 if (!isNaN(intValue)) {
   for (i = 0; i < intValue; i++) {
+    let x = '';
     for (j = 0; j < intValue; j++) {
-      process.stdout.write('#');
+      x += 'x';
     }
-    console.log();
+    console.log(x);
   }
 } else {
   console.log('Missing size');
