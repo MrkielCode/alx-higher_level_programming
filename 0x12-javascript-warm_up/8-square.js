@@ -4,13 +4,12 @@
  */
 
 const intValue = parseInt(process.argv[2]);
-let i, j;
 
 if (!isNaN(intValue)) {
-  for (i = 0; i < intValue; i++) {
+  for (let i = 0; i < intValue; i++) {
     let x = '';
-    for (j = 0; j < intValue; j++) {
-      x += 'x';
+    for (let j = 0; j < intValue; j++) {
+      x += 'X';
     }
     console.log(x);
   }
