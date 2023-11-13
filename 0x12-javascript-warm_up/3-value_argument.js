@@ -3,10 +3,10 @@
  * print first arg
  */
 
-let argv = process.argv[2];
+const argv = process.argv[2];
 
 if (!argv) {
-  console.log('No arguments');
+  console.log('No argument');
 } else {
   console.log(argv);
 }
