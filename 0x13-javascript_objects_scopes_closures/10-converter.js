@@ -1,4 +1,4 @@
-#!/user/bin/node
+#!/usr/bin/node
 
 exports.converter = function (base) {
   return function (number) {
