@@ -20,7 +20,6 @@ if __name__ == "__main__":
     cur = conn.cursor()
     statement = "SELECT * FROM states ORDER BY id ASC"
     cur.execute(statement)
-    
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
