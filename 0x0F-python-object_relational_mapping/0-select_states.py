@@ -3,13 +3,13 @@
 script to list name of state
 
 """
-import sys
+from sys import argv
 import MySQLdb
 
 if __name__ == "__main__":
-    my_user = sys.argv[1]
-    my_password = sys.argv[2]
-    my_db = sys.argv[3]
+    my_user = argv[1]
+    my_password = argv[2]
+    my_db = argv[3]
 
     conn = MySQLdb.connect(
         host='localhost',
