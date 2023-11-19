@@ -18,9 +18,9 @@ if __name__ == "__main__":
     )
     cur = conn.cursor()
     statement = '''
-    SELECT cities.id, cities.name, states.name 
-    FROM cities
-    JOIN states ON cities.state_id = states.id 
+    SELECT cities.id, cities.name, states.name
+    FROM cities \
+    JOIN states ON cities.state_id = states.id \
     ORDER BY cities.id ASC
     '''
 
