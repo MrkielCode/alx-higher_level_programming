@@ -17,7 +17,7 @@ if __name__ == "__main__":
     )
 
     cur = conn.cursor()
-    statement = 'SELECT name FROM states ORDER BY id ASC'
+    statement = """SELECT name FROM states ORDER BY id"""
     cur.execute(statement)
     rows = cur.fetchall()
 
