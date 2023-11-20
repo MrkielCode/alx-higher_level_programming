@@ -25,8 +25,5 @@ if __name__ == "__main__":
 
     query = session.query(State).filter(
         State.name.like("Louisiana")).order_by(State.id).first()
-    if query is None:
-        print("Not found")
-    else:
-        print("{}".format(query.id))
+    print("{}".format(query.id))
     session.close()
