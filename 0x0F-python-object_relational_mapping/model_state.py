@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 """
-To create a state table and its instance
+class representaion of a state class that
+create a state stable
 
 """
 
@@ -14,8 +15,8 @@ Base = declarative_base(mymetadata)
 
 class State(Base):
     """
-    class of each with instance of the table state
-
+    class representaion of state class
+    with instance of the class
     """
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True, nullable=False)
