@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 To create a state table and its instance
 
@@ -9,6 +10,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 mymetadata = MetaData()
 Base = declarative_base(mymetadata)
+
 
 class State(Base):
     """
