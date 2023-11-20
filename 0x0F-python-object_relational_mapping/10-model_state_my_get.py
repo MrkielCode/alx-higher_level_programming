@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This class script a state that contain "a"
+This class script a state by state.id
 in database using ORM
 
 """
