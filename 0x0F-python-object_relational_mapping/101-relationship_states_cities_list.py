@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""
+Script that  list all State object and corresponding
+City object
 
+"""
 from sys import argv
 from relationship_state import Base, State
 from relationship_city import City
