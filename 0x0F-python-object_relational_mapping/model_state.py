@@ -10,9 +10,9 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-
 class State(Base):
-"""State class
+    
+    """State class
 
     Attributes:
         __tablename__ (str): The table name of the class
