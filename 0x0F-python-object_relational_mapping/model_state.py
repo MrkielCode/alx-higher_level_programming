@@ -6,7 +6,7 @@ To create a state table and its instance
 import sqlalchemy
 from sqlalchemy import create_engine, MetaData
 from sqlalchemy import Table, Column, Integer, String
-from sqlalchemy.orm import declarative_base
+from sqlalchemy.ext.declarative import declarative_base
 
 mymetadata = MetaData()
 Base = declarative_base(mymetadata)
