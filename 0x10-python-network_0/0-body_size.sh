@@ -1,4 +1,4 @@
 #!/bin/bash
-#checking the size of the url
+# it takes a url and send a request to get the body size
 
 curl -s "$1" | wc -c 
