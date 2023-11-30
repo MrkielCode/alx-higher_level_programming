@@ -1,5 +1,5 @@
 #!/bin/bash
 #checking the size of the url
-url=$1
-curl -s -o /dev/null -w "%{size_download}" "$url"
+
+curl -s -w "%{size_download}" "$1"
 echo
