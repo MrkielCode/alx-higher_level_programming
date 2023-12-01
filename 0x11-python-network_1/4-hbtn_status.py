@@ -3,6 +3,8 @@ import requests
 """
 This scripts fetches url content
 """
+
+
 if __name__ == "__main__":
     data = requests.get('https://alx-intranet.hbtn.io/status')
     print("Body response:")
