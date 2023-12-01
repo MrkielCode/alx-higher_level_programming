@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-""" It send request to get the request ID """
+"""
+It send request to get the request ID
+
+"""
 from urllib.request import urlopen
 from sys import argv
 
