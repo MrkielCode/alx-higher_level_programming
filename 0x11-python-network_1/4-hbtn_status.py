@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-import requests
 """
 This scripts fetches url content
 """
-
+import resquests
 
 if __name__ == "__main__":
     data = requests.get('https://alx-intranet.hbtn.io/status')
