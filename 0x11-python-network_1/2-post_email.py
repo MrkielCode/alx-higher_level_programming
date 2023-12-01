@@ -5,10 +5,10 @@ from urllib.parse import urlencode
 from sys import argv
 
 if __name__ == "__main__":
-
-    email = urlencode({'email': argv[2]})
     url = argv[1]
+    email = argv[2]
 
-    with urlopen(url, data=email.encode('ascii')) as response:
-        data = response.read().decode('utf-8')
-        print(data)
+    data = urlencode({'email': email}).encode('ascii')
+    req = Request(url, data=data, method='POST')
+    with urlopen(req) as response:
+        page = response.read()
