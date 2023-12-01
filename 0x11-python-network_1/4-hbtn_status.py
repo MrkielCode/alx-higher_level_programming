@@ -2,7 +2,7 @@
 """
 This scripts fetches url content
 """
-import resquests
+import requests
 
 if __name__ == "__main__":
     data = requests.get('https://alx-intranet.hbtn.io/status')
