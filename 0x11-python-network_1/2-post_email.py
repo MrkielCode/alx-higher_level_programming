@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 
-from urllib.request import urlopen, Request
-from urllib.parse import urlencode
+import urllib.request
+import urllib.parse
 from sys import argv
 
 if __name__ == "__main__":
-    url = argv[1]
+    link = argv[1]
     email = argv[2]
-
-    data = urlencode({'email': email}).encode('ascii')
-    req = Request(url, data=data, method='POST')
-    with urlopen(req) as response:
-        page = response.read()
+    data = urllib.parse.urlencode({'email': email}).encode('utf-8')
+    req = urllib.request.Request(link, data=data, method='POST')
+    with urllib.request.urlopen(req) as response:
+        body = response.read().decode('utf-8')
+        print(body)
