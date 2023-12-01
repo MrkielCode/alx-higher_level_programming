@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-It send request to get the request ID
-
+It send request to server and it returns the X-Request-Id
 """
 from urllib.request import urlopen
 import sys
