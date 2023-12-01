@@ -4,8 +4,9 @@ It send request to get the request ID
 
 """
 from urllib.request import urlopen
-from sys import argv
+import sys
 
-with urlopen(argv[1]) as response:
+url = sys.argv[1]
+with urlopen(url) as response:
     x_request_id = response.headers.get('X-Request-Id')
     print(x_request_id)
