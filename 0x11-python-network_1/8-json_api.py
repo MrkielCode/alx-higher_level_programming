@@ -7,19 +7,22 @@ and returns json data
 from sys import argv
 import requests
 
-url = "http://0.0.0.0:5000/search_user"
-
-if len(argv) == 2:
-    q = argv[1]
-    try:
-        r = requests.get(url)
-        data = r.json()
-        if q in data:
-            print(data[q])
-    except requests.exceptions.JSONDecodeError as e:
-        print(" Not a valid JSON")
+if __name__ == "__main__":
+    if len(argv) == 1:
+        q = ""
     else:
-        print("No result")
-else:
-    q=""
-    print("No result")
+        q = argv[1]
+
+    payload = {'q': q}
+    url = 'http://0.0.0.0:5000/search_user'
+
+    response = requests.post(url, data=payload)
+
+    try:
+        data = response.json()
+        if data:
+            print(f"[{data['id']}] {data['name']}")
+        else:
+            print("No result")
+    except ValueError:
+        print("Not a valid JSON")
