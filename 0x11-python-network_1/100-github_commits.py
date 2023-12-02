@@ -1,17 +1,20 @@
 #!/usr/bin/python3
-"""Lists the 10 most recent commits on a given GitHub repository.
-Usage: ./100-github_commits.py <repository name> <repository owner>
 """
-import sys
-import requests
+To get a request of users in commit "rails"
+"""
 
+import requests
+from sys import argv
 
 if __name__ == "__main__":
-    url = "https://api.github.com/repos/{}/{}/commits".format(
-        sys.argv[2], sys.argv[1])
+    url = "https://api.github.com/repos/{}/{}/commits".format(argv[1], argv[2])
+    headers = {
+        'Accept': 'Accept: application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28'
+    }
 
-    r = requests.get(url)
-    commits = r.json()
+    response = requests.get(url)
+    commits = response.json()
     try:
         for i in range(10):
             print("{}: {}".format(
