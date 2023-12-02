@@ -7,14 +7,11 @@ import requests
 from sys import argv
 
 if __name__ == "__main__":
-    url = "https://api.github.com/repos/{}/{}/commits".format(argv[1], argv[2])
-    headers = {
-        'Accept': 'Accept: application/vnd.github+json',
-        'X-GitHub-Api-Version': '2022-11-28'
-    }
+    url = "https://api.github.com/repos/{}/{}/commits".format(
+        sys.argv[2], sys.argv[1])
 
-    response = requests.get(url)
-    commits = response.json()
+    r = requests.get(url)
+    commits = r.json()
     try:
         for i in range(10):
             print("{}: {}".format(
