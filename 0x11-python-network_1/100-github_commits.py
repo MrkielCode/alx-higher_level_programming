@@ -10,12 +10,7 @@ if __name__ == "__main__":
     repo_name = argv[1]
     owner = argv[2]
     url = "https://api.github.com/repos/{}/{}/commits".format(repo_name, owner)
-    headers = {
-        'Accept': 'Accept: application/vnd.github+json',
-        'X-GitHub-Api-Version': '2022-11-28'
-    }
-
-    response = requests.get(url, headers=headers)
+    response = requests.get(url)
     if response.status_code == 200:
         commits = response.json()
         for commit in commits[:10]:
