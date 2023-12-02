@@ -12,7 +12,10 @@ url = "http://0.0.0.0:5000/search_user"
 if len(argv) == 2:
     q = argv[1]
     try:
-        r = requests.get(url).json(q)
+        r = requests.get(url)
+        data = r.json()
+        if q in data:
+            print(data[q])
     except requests.exceptions.JSONDecodeError as e:
         print(" Not a valid JSON")
     else:
