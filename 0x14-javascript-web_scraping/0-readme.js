@@ -1,4 +1,7 @@
 #!/usr/bin/node
+/**
+ * this script read a file from argv 2
+ */
 
 const fs = require('fs');
 
