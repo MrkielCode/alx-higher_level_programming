@@ -17,7 +17,9 @@ function getFilms (apiUrl) {
     if (response.statusCode === 200) {
       const datas = JSON.parse(body).results;
       const characterWedges = datas.filter(movie =>
-        movie.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')
+        movie.characters.some(character =>
+          character.endsWith('/18/')
+        )
       );
       console.log(characterWedges.length);
     }
