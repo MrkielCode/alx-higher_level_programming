@@ -4,7 +4,7 @@
  *
  */
 const request = require('request');
-
+const fs = require('fs')
 const apiUrl = process.argv[2];
 
 function getFilms (apiUrl) {
